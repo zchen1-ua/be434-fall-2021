@@ -105,6 +105,7 @@ Graduate Students:
 Grading Scale:
 
 | Grade | A | B | C | D | F |
+| ----- | - | - | - | - | - |
 | Points | 900 or more | 800-899 | 700-799 | 600-699 | less than 600 |
 
 University policy regarding grades and grading systems is available at http://catalog.arizona.edu/policy/grades-and-grading-system.
