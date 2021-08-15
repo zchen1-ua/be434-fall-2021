@@ -84,39 +84,28 @@ Optional software carpentry workshops and events related to Python data analytic
 The final letter grades for the class are based on the TOTAL NUMBER OF POINTS that each student accumulates for the following assessments (see details for each section below):
 
 Undergraduate Students:
-|===
-| Category | # Assessments | Points per assessment | Points total 
 
-| Homework (48%) | 12 | 40 | 480
-
-| Quizzes (36%) | 12 | 30 | 360
-
-| Project (16%) | 1 | 160 | 160
-
-| Total | | 1000
-|===
+| Category | # Assessments | Points per assessment | Points total |
+| -------- | ------------- | --------------------- | ------------ |
+| Homework (48%) | 12 | 40 | 480 |
+| Quizzes (36%) | 12 | 30 | 360 |
+| Project (16%) | 1 | 160 | 160 |
+| Total | | 1000 |
 
 Graduate Students:
-|===
-| Category | # Assessments | Points per assessment | Points total
 
-| Homework (36%) | 12 | 30 | 360
-
-| Quizzes (30%) | 12 | 25 | 300
-
-| Project (14%) | 1 | 140 | 140
-
-| Final exam (20%) | 1 | 200 | 200
-
-| Total | | | 1000
-|===
+| Category | # Assessments | Points per assessment | Points total |
+| -------- | ------------- | --------------------- | ------------ |
+| Homework (36%) | 12 | 30 | 360 |
+| Quizzes (30%) | 12 | 25 | 300 |
+| Project (14%) | 1 | 140 | 140 |
+| Final exam (20%) | 1 | 200 | 200 |
+| Total | | | 1000 |
 
 Grading Scale:
-|===
-| Grade | A | B | C | D | F
 
-| Points | 900 or more | 800-899 | 700-799 | 600-699 | less than 600
-|===
+| Grade | A | B | C | D | F |
+| Points | 900 or more | 800-899 | 700-799 | 600-699 | less than 600 |
 
 University policy regarding grades and grading systems is available at http://catalog.arizona.edu/policy/grades-and-grading-system.
 
