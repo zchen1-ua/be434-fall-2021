@@ -6,10 +6,10 @@ Shantz 440; Monday and Wednesday 9:30-11:15 am
 
 This course provides a comprehensive introduction to Python for data analytics. This course teaches students Python’s basic data types and structures like strings, numbers, lists, tuples, dictionaries, and sets. In addition, the course focuses on testing code by writing small functions to develop larger, testable programs. As programs become complex, this “test-driven development strategy” ensures that code is robust and can be delivered to the community as cutting-edge open source packages. The course focuses on hands-on coding exercises to develop practical coding skills for interpreting and analyzing high-dimensional biological data. Students work in a collaborative learning classroom to participate in live coding exercises and gain skills in:
 
-. basic Python data structures 
-. writing and testing functions and programs, 
-. using Python to read/write/parse files, and 
-. using regular expressions. 
+- basic Python data structures 
+- writing and testing functions and programs, 
+- using Python to read/write/parse files, and 
+- using regular expressions. 
 
 These skills are taught by implementing real-world coding examples to manipulate and process data in Python and test out your new skills through writing games in Python.
 
@@ -32,15 +32,15 @@ The course objective is to teach formal, structured methods to write Python well
 Expected Learning Outcomes
 This course is designed to provide students with a foundational understanding of manipulating data in Python. Upon completing this course students will be able to: 
 
-. Write command-line Python programs; 
-. Process a variety of command-line arguments, options, and flags; 
-. Write and run tests for your programs and functions; 
-. Manipulate of Python data structures including strings, lists, tuples, sets, dictionaries; 
-. Use higher-order functions like map and filter; 
-. Write and use regular expressions; 
-. Read, parse, and write various text formats; 
-. Use and control randomness; 
-. Use these skills to write challenging games in Python.
+- Write command-line Python programs; 
+- Process a variety of command-line arguments, options, and flags; 
+- Write and run tests for your programs and functions; 
+- Manipulate of Python data structures including strings, lists, tuples, sets, dictionaries; 
+- Use higher-order functions like map and filter; 
+- Write and use regular expressions; 
+- Read, parse, and write various text formats; 
+- Use and control randomness; 
+- Use these skills to write challenging games in Python.
 
 Graduate students will go beyond these basic learning outcomes to (1) apply basic coding principles to solve more advanced challenges, (2) develop optimized solutions to working with large-scale datasets and (3) evaluate when it is important to move from a single server solution to high-performance computing.   
 
