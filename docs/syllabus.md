@@ -4,7 +4,14 @@ Shantz 440; Monday and Wednesday 9:30-11:15 am
 	
 ## Description of Course
 
-This course provides a comprehensive introduction to Python for data analytics. This course teaches students Python’s basic data types and structures like strings, numbers, lists, tuples, dictionaries, and sets. In addition, the course focuses on testing code by writing small functions to develop larger, testable programs. As programs become complex, this “test-driven development strategy” ensures that code is robust and can be delivered to the community as cutting-edge open source packages. The course focuses on hands-on coding exercises to develop practical coding skills for interpreting and analyzing high-dimensional biological data. Students work in a collaborative learning classroom to participate in live coding exercises and gain skills in (1) basic Python data structures (2) writing and testing functions and programs, (2) using Python to read/write/parse files, and (4) using regular expressions. These skills are taught by implementing real-world coding examples to manipulate and process data in Python and test out your new skills through writing games in Python.
+This course provides a comprehensive introduction to Python for data analytics. This course teaches students Python’s basic data types and structures like strings, numbers, lists, tuples, dictionaries, and sets. In addition, the course focuses on testing code by writing small functions to develop larger, testable programs. As programs become complex, this “test-driven development strategy” ensures that code is robust and can be delivered to the community as cutting-edge open source packages. The course focuses on hands-on coding exercises to develop practical coding skills for interpreting and analyzing high-dimensional biological data. Students work in a collaborative learning classroom to participate in live coding exercises and gain skills in:
+
+. basic Python data structures 
+. writing and testing functions and programs, 
+. using Python to read/write/parse files, and 
+. using regular expressions. 
+
+These skills are taught by implementing real-world coding examples to manipulate and process data in Python and test out your new skills through writing games in Python.
 
 ## Course Prerequisites or Corequisites
 
@@ -13,11 +20,11 @@ Some experience programming Python is useful but not required.
 
 ## Instructor and Contact Information
 
-Instructor: Ken Youens-Clark, MS, Adjunct Lecturer
-Office: TBD
-E-mail: kyclarkarizona.edu
-Office Hours: TBD
-Course Websites: https://github.com/kyclark/be434-fall-2021
+- Instructor: Ken Youens-Clark, MS, Adjunct Lecturer
+- Office: TBD
+- E-mail: kyclarkarizona.edu
+- Office Hours: TBD
+- Course Websites: https://github.com/kyclark/be434-fall-2021
 
 ## Course Objectives
 
@@ -66,9 +73,10 @@ All texts are available free of charge, required sections are listed on the cour
 
 ## Optional Texts or Readings
 
+* The Python Quick Book (3rd ed), Manning, 2018.
+* Beyond the Basic Stuff with Python, Sweigart, 2021
 * Beginning Python, Apress, Hetland, 2017.
 * Python for Data Analysis 2nd edition, O’Reilly, 2017.
-* The Python Quick Book (3rd ed), Manning, 2018.
 * Additional required readings will be listed weekly on the course schedule and D2L.
 
 ## Required or Special Materials
@@ -117,9 +125,9 @@ Dispute of Grade Policy: Disputes on a grade for an assignment, quiz, or exam mu
 ## Assignments and Examinations
 
 All assignments, quizzes, and examinations are listed on the course GitHub site https://github.com/hurwitzlab/biosystems-analytics-2020 and linked in D2L. 
-Homework
+
 Homework is assigned every Thursday and is due the following Thursday. The homework provides you with practice in scripting and analytics. Homework is turned in by committing your code to your GitHub repository that is shared with the instructor. At the beginning of class on Thursday, I will download your code from GitHub. Your grade will be the percentage of tests you pass in the provided test suite.. We encourage group work but be sure the code you turn in has been independently written (see Code of Academic Integrity below). 
-  
+
 ## Quizzes
 
 Each week you will be tested on the reading for the week ahead (see the schedule in D2L). This will prepare you for the lectures and in-class work. Each of the quizzes will be available on D2L during the first 10 minutes of class on Tuesdays. Answers for each quiz are reviewed in class and posted on the class D2L website.
