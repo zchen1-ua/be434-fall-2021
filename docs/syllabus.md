@@ -74,8 +74,9 @@ All texts are available free of charge, required sections are listed on the cour
 ## Optional Texts or Readings
 
 * The Python Quick Book (3rd ed), Manning, 2018.
-* Beyond the Basic Stuff with Python, Sweigart, 2021
-* Beginning Python, Apress, Hetland, 2017.
+* Beyond the Basic Stuff with Python, Sweigart, No Starch, 2021
+* Mastering Python for Bioinformatics, Youens-Clark, O'Reilly, 2021
+* Beginning Python, Hetland, Apress, 2017.
 * Python for Data Analysis 2nd edition, O’Reilly, 2017.
 * Additional required readings will be listed weekly on the course schedule and D2L.
 
