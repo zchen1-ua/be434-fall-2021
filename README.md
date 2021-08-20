@@ -1,6 +1,6 @@
 # BE434/535 Fall 2021
 
-Course information
+See the syllabus in the "docs" directory.
 
 ## Author
 

@@ -1,6 +1,6 @@
 # Biosystems Analytics 434/534 (3 units)
 
-Shantz 440; Monday and Wednesday 9:30-11:15 am
+Shantz 440; Monday and Wednesday 9:30-10:45AM
 	
 ## Description of Course
 
@@ -21,9 +21,9 @@ Some experience programming Python is useful but not required.
 ## Instructor and Contact Information
 
 - Instructor: Ken Youens-Clark, MS, Adjunct Lecturer
-- Office: TBD
-- E-mail: kyclarkarizona.edu
-- Office Hours: TBD
+- Office: `None`
+- E-mail: kyclark@arizona.edu
+- Office Hours: 8:30-9:30AM M/W in Shantz 440
 - Course Websites: https://github.com/kyclark/be434-fall-2021
 
 ## Course Objectives
@@ -99,7 +99,7 @@ Undergraduate Students:
 | Homework (48%) | 12 | 40 | 480 |
 | Quizzes (36%) | 12 | 30 | 360 |
 | Project (16%) | 1 | 160 | 160 |
-| Total | | 1000 |
+| Total | | | 1000 |
 
 Graduate Students:
 
