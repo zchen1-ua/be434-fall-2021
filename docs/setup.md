@@ -13,13 +13,13 @@ To check out the code locally, I recommend that you configure your SSH keys.
 Open a terminal, and do this:
 
 ```
-$ ls ~/.ssh
+ls ~/.ssh
 ```
 
 If you get an error because that directory does not exist, then run this command:
 
 ```
-$ ssh-keygen
+ssh-keygen
 ```
 
 Press "Enter" repeatedly to accept the default answers (unless you really want to type a passphrase when using your key).
@@ -36,7 +36,7 @@ Do not share the contents of this file or copy it anywhere.
 You can use the `cat` command to look at the contents of the **public** SSH key in _id_rsa.pub_:
 
 ```
-$ cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub
 ```
 
 Copy all the text you see from "ssh-rsa" to the end.
@@ -48,27 +48,27 @@ With that, you now should be able _clone_ or copy down the contents of the repo 
 Be sure to replace _YOUR_GITHUB_ID_ with your GitHub ID:
 
 ```
-$ git clone git@github.com:YOUR_GITHUB_ID/be434-fall-2021.git
+git clone git@github.com:YOUR_GITHUB_ID/be434-fall-2021.git
 ```
 
 If that goes well, you should have a _be434-fall-2021_ directory.
 Go into that directory:
 
 ```
-$ cd be434-fall-2021
+cd be434-fall-2021
 ```
 
 You will need to configure my original GitHub repo as an _upstream_ source with the following command:
 
 ```
-$ git remote add upstream https://github.com/kyclark/be434-fall-2021.git
+git remote add upstream https://github.com/kyclark/be434-fall-2021.git
 ```
 
 I will make updates to the repo throughout the semester to add new materials and assignments.
 You will use this command to _pull_ my changes into your repo:
 
 ```
-$ git pull upstream main
+git pull upstream main
 ```
 
 
@@ -108,7 +108,7 @@ Python 3.9.1
 Fingers crossed that this works:
 
 ```
-$ brew install python3
+brew install python3
 ```
 
 If that works:
@@ -125,7 +125,7 @@ Python 3.9.6
 If you do not have Python installed and you are not running the Apple M1 processor, you can download the latest Python source code:
 
 ```
-$ wget https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz
+wget https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz
 ```
 
 If you don't have `wget`, consider installing it.
@@ -133,7 +133,7 @@ If you are on macOS, I would recommend you learn how to use [Homebrew](https://b
 Alternately, you can use [`curl`](https://curl.se/):
 
 ```
-$ curl https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz --output Python-3.9.6.tgz
+curl https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz --output Python-3.9.6.tgz
 ```
 
 The `.tgz` is a Gzipped-compressed _tar_ (tape archive) file, AKA a _tarball_.
@@ -146,7 +146,7 @@ You can use `tar` with the following flags:
 You can unpack the tarball like so:
 
 ```
-$ tar -x -v -f Python-3.9.6.tgz
+tar -x -v -f Python-3.9.6.tgz
 ```
 
 As these are single-character _short_ flag, they can be combined like `-xvf`.
@@ -154,20 +154,20 @@ The order of `xv` and `vx` is not important, but the `-f` must come last as it n
 Oddly, `tar` doesn't even require the dash, so it's quite common to see this like so:
 
 ```
-$ tar xvf Python-3.9.6.tgz
+tar xvf Python-3.9.6.tgz
 ```
 
 That should emit around 4500 lines of text explaining the files that are being unpacked.
 If you would rather not see that, then omit the `-v` flag.
 
 ```
-$ tar xf Python-3.9.6.tgz
+tar xf Python-3.9.6.tgz
 ```
 
 Use the `cd` (_change directory_) command to go into the new _Python-3.9.6_ directory:
 
 ```
-$ cd Python-3.9.6
+cd Python-3.9.6
 ```
 
 Use `ls` (_list_) to look at the files:
@@ -188,7 +188,7 @@ This may require you to install said C compiler.
 For instance, on macOS you will probably need to install Xcode's command-line utilities.
 
 ```
-$ ./configure --enable-optimizations
+./configure --enable-optimizations
 ```
 
 If everything goes well, the last line should be this:
@@ -201,7 +201,7 @@ That means you have a _Makefile_, which means you can run `make` to build Python
 This step may take a while:
 
 ```
-$ make
+make
 ```
 
 If that succeeds, you should be able to run **`make install`** to copy the new Python binary to location like `/usr/local/bin`.
