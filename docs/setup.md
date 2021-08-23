@@ -1,18 +1,5 @@
 # Setting Up a Development Environment
 
-## Windows
-
-Follow the directions to install [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-
-## Mac
-
-* Open Terminal or consider using [iTerm2](https://iterm2.com/).
-* Install Xcode command-line utilities.
-
-## VS Code
-
-If you don't have a preferred way to write and edit code, install [VS Code](https://code.visualstudio.com/).
-
 ## GitHub
 
 The following will help you create a GitHub account and copy the course repo into your account:
@@ -77,12 +64,26 @@ You will need to configure my original GitHub repo as an _upstream_ source with 
 $ git remote add upstream https://github.com/kyclark/be434-fall-2021.git
 ```
 
-I will make updates to the repo throughout the semester to add new materials and assigmnents.
+I will make updates to the repo throughout the semester to add new materials and assignments.
 You will use this command to _pull_ my changes into your repo:
 
 ```
 $ git pull upstream main
 ```
+
+
+## Windows
+
+Follow the directions to install [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+
+## Mac
+
+* Open Terminal or consider using [iTerm2](https://iterm2.com/).
+* Install Xcode command-line utilities.
+
+## VS Code
+
+If you don't have a preferred way to write and edit code, install [VS Code](https://code.visualstudio.com/).
 
 ## Python
 
