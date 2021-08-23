@@ -196,6 +196,13 @@ For instance, on macOS you will probably need to install Xcode's command-line ut
 ./configure --enable-optimizations
 ```
 
+If you get an error about missing a C compiler, you will need to install one.
+On Ubuntu, you can do this:
+
+```
+sudo apt install build-essential
+```
+
 If everything goes well, the last line should be this:
 
 ```
