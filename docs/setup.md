@@ -203,7 +203,7 @@ On Ubuntu, you can do this:
 sudo apt install build-essential
 ```
 
-NOTE: The `sudo` command is a combination of _su_ (super-user) and _do_, so you are executing a command as the _root_ or administrator of the machine. It will likely require you to type your password.
+NOTE: The `sudo` command is a combination of _su_ (super-user) and _do_, so you are executing a command as the _root_ or administrator of the machine. It will likely require you to type your password. Cf. https://xkcd.com/149/.
 
 If everything goes well, the last line should be this:
 
