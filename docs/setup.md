@@ -205,12 +205,7 @@ sudo apt install build-essential
 
 NOTE: The `sudo` command is a combination of _su_ (super-user) and _do_, so you are executing a command as the _root_ or administrator of the machine. It will likely require you to type your password. Cf. https://xkcd.com/149/.
 
-If everything goes well, the last line should be this:
-
-```
-creating Makefile
-```
-
+If everything goes well, the last line should say _creating Makefile_.
 That means you have a _Makefile_, which means you can run `make` to build Python.
 This step may take a while:
 
