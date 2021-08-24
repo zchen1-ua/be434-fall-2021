@@ -203,6 +203,8 @@ On Ubuntu, you can do this:
 sudo apt install build-essential
 ```
 
+NOTE: The `sudo` command is a combination of _su_ (super-user) and _do_, so you are executing a command as the _root_ or administrator of the machine. It will likely require you to type your password.
+
 If everything goes well, the last line should be this:
 
 ```
@@ -217,6 +219,7 @@ make
 ```
 
 If that succeeds, you should be able to run **`make install`** to copy the new Python binary to location like `/usr/local/bin`.
+If permissions prevent you from writing to system directories, then do **`sudo make install`** to run as root.
 
 ## Author
 
