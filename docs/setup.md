@@ -46,6 +46,12 @@ Click the "Add SSH key" button to save your new key.
 
 Next, go to the [course repository](https://github.com/kyclark/be434-fall-2021) and click the "Fork" button so as to make a copy of the code into your account. 
 Add my GitHub username "kyclark" as a Collaborator on your repo so that I can push and pull code, and then email me your GitHub ID and the URL for your repo. 
+
+* Go to the "Settings" for your repo
+* Choose "Manage Access" from the left panel
+* Click the green "Invite a collaborator" button
+* Add "kyclark" and send
+
 All your assignments will be pushed to GitHub where I will pull the code to my machine for checking. 
 At the end of the semester, you will have a public repository of code you can share to show proficiency in Python coding and testing.
 
