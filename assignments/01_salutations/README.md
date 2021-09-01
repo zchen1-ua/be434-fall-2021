@@ -31,7 +31,7 @@ I suggest you create a directory in your `$HOME` (which is often written using t
 It's common to create a _~/local_ or _~/.local_ (so it's hidden) to install software, and inside of that a _bin_ directory:
 
 ```
-$ mkdir ~/.local/bin
+mkdir ~/.local/bin
 ```
 
 You will need to ensure that this directory is included in your `$PATH`.
@@ -39,7 +39,7 @@ If are using the `bash` shell, you can edit _~/.bashrc_ (or possibly _~/.bash_pr
 For instance, you can use `nano`:
 
 ```
-$ nano ~/.bashrc
+nano ~/.bashrc
 ```
 
 Add this line to the end:
@@ -51,25 +51,25 @@ export PATH=~/.local/bin:$PATH
 Then use the `source` command to read this file and alter your `$PATH`:
 
 ```
-$ source ~/.bashrc
+source ~/.bashrc
 ```
 
 The dot (`.`) is an alias for `source` when it is used as a command:
 
 ```
-$ . ~/.bashrc
+. ~/.bashrc
 ```
 
 You can view your `$PATH` to ensure this directory is included:
 
 ```
-$ echo $PATH
+echo $PATH
 ```
 
 Then you can copy the `new.py` program to that location:
 
 ```
-$ cp ../../bin/new.py ~/.local/bin
+cp ../../bin/new.py ~/.local/bin
 ```
 
 Verify that the program can be found using `which`:
