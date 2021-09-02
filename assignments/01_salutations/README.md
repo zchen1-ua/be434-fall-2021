@@ -25,6 +25,21 @@ You can install all these modules using the following command:
 python3 -m pip install -r requirements.txt
 ```
 
+Also note that "pylint" may complain about the variable `rv` (return value) that is in the _test.py_ file.
+This is a perfectly fine variable name, IMHO, so to silence this warning, create your own configuration file like so:
+
+```
+pylint --generate-rcfile > ~/.pylintrc
+```
+
+Then edit that file to set the following line.
+Note that this should be one continuous line, but I've broken it here for display:
+
+```
+disable=too-many-locals,invalid-name,too-many-statements,too-many-arguments,\
+cell-var-from-loop,wrong-import-order
+```
+
 ## Installing new.py Into Your PATH
 
 In the _bin_ directory of your repo, you should find a program called `new.py` that will help you make a new Python program.
