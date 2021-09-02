@@ -2,6 +2,29 @@
 
 Create Python program called `saluations.py` that will print a friendly greeting.
 
+## Installing Prerequsite Modules
+
+You will need several modules moving forward which I have included in the file _requirements.txt_:
+
+```
+$ cat requirements.txt
+pytest
+pylint
+flake8
+yapf
+black
+mypy
+pytest-flake8
+pytest-mypy
+pytest-pylint
+```
+
+You can install all these modules using the following command:
+
+```
+python3 -m pip install -r requirements.txt
+```
+
 ## Installing new.py Into Your PATH
 
 In the _bin_ directory of your repo, you should find a program called `new.py` that will help you make a new Python program.
