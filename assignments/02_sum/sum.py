@@ -18,6 +18,7 @@ def get_args():
 
     parser.add_argument('numbers',
                         metavar='INT',
+                        type=int, # force the input to be intergers
                         nargs='+', # one or more
                         help='Numbers to add')
 
@@ -30,11 +31,12 @@ def main():
 
     args = get_args()
     numbers = args.numbers
+    string = [str(n) for n in numbers]
 
     if len(numbers) == 1:
-        print(str(numbers[0]) + ' = ' + str(numbers[0]))
+        print(string[0] + ' = ' + string[0])
     else: 
-        print()
+        print('{} = {}'.format(' + '.join(string), sum(numbers)))
 
 # --------------------------------------------------
 if __name__ == '__main__':
