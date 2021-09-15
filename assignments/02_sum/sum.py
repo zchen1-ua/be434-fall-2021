@@ -24,19 +24,22 @@ def get_args():
 
     return parser.parse_args()
 
-
 # --------------------------------------------------
 def main():
     """Make a jazz noise here"""
+
+    # nums = []
+    # total = 0
+    # for num in args.numbers:
+    #     nums.append(str(num))
+    #     total += num
 
     args = get_args()
     numbers = args.numbers
     string = [str(n) for n in numbers]
 
-    if len(numbers) == 1:
-        print(string[0] + ' = ' + string[0])
-    else: 
-        print('{} = {}'.format(' + '.join(string), sum(numbers)))
+    print('{} = {}'.format(' + '.join(string), sum(numbers)))
+    # print('{} = {}'.format(' + '.join(map(str, numbers)), sum(numbers)))
 
 # --------------------------------------------------
 if __name__ == '__main__':
