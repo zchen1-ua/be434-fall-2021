@@ -245,7 +245,7 @@ Week 13
 
 Week 14
 22 Nov   Password (Randomness)
-17 Nov   Quiz 12
+24 Nov   Quiz 12
 
 Week 15
 29 Nov   Tic-Tac-Toe (State)
