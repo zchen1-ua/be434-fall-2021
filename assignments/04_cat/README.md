@@ -138,8 +138,8 @@ $ ./cat.py -n inputs/fox.txt inputs/spiders.txt
 
 Your program will need to `for` loops:
 
-. The first `for` loop will iterate over the file arguments
-. The second `for` loop will iterate over the lines in each file
+1. The first `for` loop will iterate over the file arguments
+2. The second `for` loop will iterate over the lines in each file
 
 For example:
 
