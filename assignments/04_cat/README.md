@@ -134,6 +134,64 @@ $ ./cat.py -n inputs/fox.txt inputs/spiders.txt
      3	casually.
 ```
 
+## Hints
+
+Your program will need to `for` loops:
+
+. The first `for` loop will iterate over the file arguments
+. The second `for` loop will iterate over the lines in each file
+
+For example:
+
+```
+for fh in args.files:
+    for line in fh:
+        ...
+```
+
+You will need a way to keep track of the line number, which must be reset with each file.
+Remember that you must initialize a variable to use it in Python:
+
+```
+line_num = 0
+```
+
+You can use the `+=` operator to increment this variable:
+
+```
+line_num += 1
+```
+
+You might also investigate the [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function:
+
+```
+>>> vals = ['foo', 'bar', 'baz']
+>>> list(enumerate(vals))
+[(0, 'foo'), (1, 'bar'), (2, 'baz')]
+```
+
+You can unpack the index and value in a `for` loop like so:
+
+```
+>>> for num, val in enumerate(vals):
+...     print(num, val)
+...
+0 foo
+1 bar
+2 baz
+```
+
+The `enumerate()` function accepts an optional `start` value for where to start numbering:
+
+```
+>>> for num, val in enumerate(vals, start=1):
+...     print(num, val)
+...
+1 foo
+2 bar
+3 baz
+```
+
 ## Testing
 
 A passing test suite looks like this:
