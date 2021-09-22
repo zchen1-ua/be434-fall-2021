@@ -192,6 +192,8 @@ The `enumerate()` function accepts an optional `start` value for where to start 
 3 baz
 ```
 
+Also, consider reading a [Rust version](https://learning.oreilly.com/library/view/systems-programming-with/9781098109424/ch03.html) of `cat`.
+
 ## Testing
 
 A passing test suite looks like this:
