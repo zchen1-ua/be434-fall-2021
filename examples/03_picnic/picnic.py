@@ -21,7 +21,10 @@ def get_args():
                         nargs='+', # one or more
                         help='Items to eat')
     
-    parser.add_argument('-s', )
+    parser.add_argument('-s',
+                        '--sorted',
+                        action='store_true',
+                        help='Sort the items')
 
     return parser.parse_args()
 
@@ -33,10 +36,10 @@ def main():
     args = get_args()
     items = args.items
 
-    if args.sorted:
+    if args.sorted: 
         items = sorted(items)
         # items.sort()
-        
+
     if len(items) == 1:
         print('You are bringing ' + items[0] + '.')
     elif len(items) == 2:
