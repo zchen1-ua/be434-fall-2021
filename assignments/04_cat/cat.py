@@ -6,7 +6,7 @@ Purpose: Concatenate files
 """
 
 import argparse
-import os
+# import os
 
 
 # --------------------------------------------------
