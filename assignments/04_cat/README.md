@@ -84,12 +84,10 @@ Now, think about how you could modify that to make it:
 Your program also needs an optional argument for "-n|--number," and you could modify this argument:
 
 ```
-    parser.add_argument('-i',
-                        '--int',
-                        help='A named integer argument',
-                        metavar='int',
-                        type=int,
-                        default=0)
+    parser.add_argument('-o',
+                        '--on',
+                        help='A boolean flag',
+                        action='store_true')
 ```
 
 Do not move forward until your program prints a help usage like the one above.
