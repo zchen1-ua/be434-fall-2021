@@ -41,7 +41,8 @@ def main():
         total_bytes += num_bytes
         total_words += num_words
 
-        print(f'{num_lines:8}{num_words:8}{num_bytes:8} {fh.name}')
+        #print(f'{num_lines:8}{num_words:8}{num_bytes:8} {fh.name}')
+        print('{:8}{:8}{:8} {}'.format(num_lines, num_words, num_bytes, fh.name))
 
     if len(args.file) > 1:
         print(f'{total_lines:8}{total_words:8}{total_bytes:8} total')
