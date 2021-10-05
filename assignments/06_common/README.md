@@ -196,6 +196,10 @@ Clearly this program could be drastically improved if it allowed for an optional
 There are several ways to consider the _distance_ between two strings, including the Hamming or Levenstein distance or via sequence alignment.
 Read Chapter 6 of _Mastering Python for Bioinformatics_ to see how to implement the Hamming distance, then extend this program to add an `-d|--distance` integer argument that defined maximum allowed Hamming distance (default `0`).
 
+When reading the British/American texts, the program does not remove punctuation, e.g., "ourselves." and "thoughts," are included in the output.
+Also, the tests do not push the program to consider words in a case-insensitive fashion, e.g., "The" vs "the."
+Can you expand the program to address these deficiencies?
+
 ## Author
 
 Ken Youens-Clark <kyclark@gmail.com>
