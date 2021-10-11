@@ -41,12 +41,15 @@ def main():
     new_text = []
 
     for char in text:
+
         if char in 'aeiou':
             new_text.append(vowel)
         elif char in 'AEIOU':
             new_text.append(vowel.upper())
         else:
             new_text.append(char)
+
+        print(char, '->', new_text[-1])
 
     print(''.join(new_text))
 
