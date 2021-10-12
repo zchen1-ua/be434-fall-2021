@@ -2,10 +2,11 @@
 """
 Author : zhuochen <zhuochen@localhost>
 Date   : 2021-10-11
-Purpose: Rock the Casbah
+Purpose: Find common words
 """
 
 import argparse
+import sys
 
 
 # --------------------------------------------------
@@ -16,35 +17,22 @@ def get_args():
         description='Rock the Casbah',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('positional',
-                        metavar='str',
-                        help='A positional argument')
-
-    parser.add_argument('-a',
-                        '--arg',
-                        help='A named string argument',
-                        metavar='str',
-                        type=str,
-                        default='')
-
-    parser.add_argument('-i',
-                        '--int',
-                        help='A named integer argument',
-                        metavar='int',
-                        type=int,
-                        default=0)
-
-    parser.add_argument('-f',
-                        '--file',
-                        help='A readable file',
-                        metavar='FILE',
+    parser.add_argument('file1',
+                        metavar='FILE1',
                         type=argparse.FileType('rt'),
-                        default=None)
+                        help='Input file 1')
+
+    parser.add_argument('file2',
+                        metavar='FILE2',
+                        type=argparse.FileType('rt'),
+                        help='Input file 2')
 
     parser.add_argument('-o',
-                        '--on',
-                        help='A boolean flag',
-                        action='store_true')
+                        '--outfile',
+                        help='Output file',
+                        metavar='FILE',
+                        type=argparse.FileType('wt'),
+                        default=sys.stdout)
 
     return parser.parse_args()
 
@@ -54,17 +42,11 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    str_arg = args.arg
-    int_arg = args.int
-    file_arg = args.file
-    flag_arg = args.on
-    pos_arg = args.positional
-
-    print(f'str_arg = "{str_arg}"')
-    print(f'int_arg = "{int_arg}"')
-    print('file_arg = "{}"'.format(file_arg.name if file_arg else ''))
-    print(f'flag_arg = "{flag_arg}"')
-    print(f'positional = "{pos_arg}"')
+    file1 = set(args.file1.read().rstrip().split())
+    file2 = set(args.file2.read().rstrip().split())
+    common = file1.intersection(file2)
+    for word in common:
+        print(word)
 
 
 # --------------------------------------------------
