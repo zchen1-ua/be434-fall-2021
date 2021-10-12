@@ -49,7 +49,12 @@ def main():
         else:
             new_text.append(char)
 
+<<<<<<< HEAD
         print(char, '->', new_text[-1])
+=======
+        if char == ' ':
+            new_text.append('\n')
+>>>>>>> 1d289c20a2d4459a215b36ff905206e6e59037e1
 
     print(''.join(new_text))
 
