@@ -46,7 +46,38 @@ def main():
     file2 = set(args.file2.read().rstrip().split())
     common = file1.intersection(file2)
     for word in common:
-        print(word)
+        print(word, file=args.outfile)
+
+    # word1 = args.file1.read().rstrip().split()
+    # word2 = args.file2.read().rstrip().split()
+
+    # for word in word1:
+    #     if word in word2:
+    #         print(word, file=args.outfile)
+
+    # word1 = {}
+    # for line in args.file1:
+    #     for word in line.split():
+    #         word1[word] = 1
+
+    # word2 = {}
+    # for line in args.file2:
+    #     for word in line.split():
+    #         word2[word] = 1
+
+    # word1 = set()
+    # for line in args.file1:
+    #     for word in line.split():
+    #         word1.add(word)
+
+    # word2 = set()
+    # for line in args.file2:
+    #     for word in line.split():
+    #         word2.add(word)
+
+    # for word in word1:
+    #     if word in word2:
+    #         print(word, file=args.outfile)
 
 
 # --------------------------------------------------
