@@ -7,7 +7,7 @@ The resulting read pairs are often placed into two files with an extension like 
 In this exercise, you will write a Python program called `au_pair.py` that accepts a list of positional arguments that are FASTA sequence files in _interleaved format_ and splits them into `_1`/`_2` files in a `-o|--outdir` argument (default `split`).
 You should use the original extension of the file, e.g., `inputs/reads1.fa` should be split into `outdir/reads1_1.fa` and `outdir/reads1_2.fa` while `inputs/reads2.fasta` should be split into `outdir/reads2_1.fasta` and `outdir/reads2_2.fasta`.
 
-The (https://en.wikipedia.org/wiki/FASTA_format)[FASTA format] spans multiple lines per sequence record.
+The [FASTA format](https://en.wikipedia.org/wiki/FASTA_format) spans multiple lines per sequence record.
 A record starts with the `>` as the first character on a line, and this is followed by a record identifier up to the first space character.
 Any other information on the header line is consider the description.
 Following this is one or more lines of sequences, e.g.:
@@ -24,7 +24,7 @@ NGCTCCTAGGTCGGCATGATGGGGGAAGGAGAGCATGGGAAGAAATGAGAGAGTAGCAA
 CGCTAGCTACGACTCGACGACAGCGAACACGCGATCGATCGGAAATGAGAGAGTAGCAA
 ```
 
-You will use (https://biopython.org/)[Biopython] to parse the FASTA files into records containing fields like `rec.id` and `rec.seq`.
+You will use [Biopython](https://biopython.org/) to parse the FASTA files into records containing fields like `rec.id` and `rec.seq`.
 Be sure to run `python3 -m pip install biopython`, then you can type the following code into a REPL to view the contents of the preceding file.
 Note that the `rec.seq` is itself a `Bio.Seq` objects, so I call `str(rec.seq)` to coerce this to a `str`:
 
