@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""tests for au_pair.py"""
+""" Tests for au_pair.py """
 
 import os
 import re
@@ -8,102 +7,142 @@ import string
 from subprocess import getstatusoutput
 from shutil import rmtree
 from Bio import SeqIO
+from typing import List, NamedTuple
 
-prg = './au_pair.py'
-small_fa = 'inputs/reads1.fa'
-large_fa = 'inputs/reads2.fasta'
+PRG = './au_pair.py'
+
+
+class Test(NamedTuple):
+    """ Test """
+    input_file: str
+    fwd_file: str
+    rev_file: str
 
 
 # --------------------------------------------------
-def random_filename():
+def random_string() -> str:
     """generate a random filename"""
 
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
 
 
 # --------------------------------------------------
-def test_exists():
+def test_exists() -> None:
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile(PRG)
 
 
 # --------------------------------------------------
-def test_usage():
+def test_usage() -> None:
     """usage"""
 
     for flag in ['', '-h', '--help']:
-        rv, out = getstatusoutput('{} {}'.format(prg, flag))
+        rv, out = getstatusoutput('{} {}'.format(PRG, flag))
         assert (rv > 0) if flag == '' else (rv == 0)
         assert re.match("usage", out, re.IGNORECASE)
 
 
 # --------------------------------------------------
-def test_bad_input():
+def test_bad_input() -> None:
     """bad input"""
 
-    bad = random_filename()
-    rv, out = getstatusoutput(f'{prg} {bad}')
+    bad = random_string()
+    rv, out = getstatusoutput(f'{PRG} {bad}')
     assert rv != 0
     assert re.search(f"No such file or directory: '{bad}'", out)
 
 
 # --------------------------------------------------
-def test_good_input1():
-    """fasta to fasta"""
+def run(tests: List[Test], out_dir: str) -> None:
+    """ Runs OK """
 
-    out_dir = 'split'
+    # Verify test files
+    for test in tests:
+        assert os.path.isfile(test.input_file)
+        assert os.path.isfile(test.fwd_file)
+        assert os.path.isfile(test.rev_file)
+
+    # Create command
+    input_files = [t.input_file for t in tests]
+    cmd = f'{PRG} {" ".join(input_files)}'
+    if out_dir:
+        cmd += f' -o {out_dir}'
+    else:
+        out_dir = 'split'
+
+    # Remove outdir if exists
     if os.path.isdir(out_dir):
         rmtree(out_dir)
 
     try:
-        print('{} {}'.format(prg, small_fa))
-        rv, _ = getstatusoutput('{} {}'.format(prg, small_fa))
+        rv, out = getstatusoutput(cmd)
         assert rv == 0
+        assert out == f'Done, see output in "{out_dir}"'
         assert os.path.isdir(out_dir)
 
-        assert len(list(SeqIO.parse(small_fa, 'fasta'))) == 4
+        for test in tests:
+            input_seqs = list(SeqIO.parse(test.input_file, 'fasta'))
+            num_half = len(input_seqs) / 2
 
-        forward = os.path.join(out_dir, 'reads1_1.fa')
-        reverse = os.path.join(out_dir, 'reads1_2.fa')
+            fwd_out = os.path.join(out_dir, os.path.basename(test.fwd_file))
+            rev_out = os.path.join(out_dir, os.path.basename(test.rev_file))
+            assert os.path.isfile(fwd_out)
+            assert os.path.isfile(rev_out)
 
-        assert os.path.isfile(forward)
-        assert os.path.isfile(reverse)
+            fwd_seqs = list(SeqIO.parse(fwd_out, 'fasta'))
+            rev_seqs = list(SeqIO.parse(rev_out, 'fasta'))
 
-        assert len(list(SeqIO.parse(forward, 'fasta'))) == 2
-        assert len(list(SeqIO.parse(reverse, 'fasta'))) == 2
+            assert len(fwd_seqs) == num_half
+            assert len(rev_seqs) == num_half
 
+            fwd_ids = [rec.id for rec in fwd_seqs]
+            rev_ids = [rec.id for rec in rev_seqs]
+
+            expected_fwd_ids = [
+                rec.id for rec in SeqIO.parse(test.fwd_file, 'fasta')
+            ]
+            expected_rev_ids = [
+                rec.id for rec in SeqIO.parse(test.rev_file, 'fasta')
+            ]
+
+            assert fwd_ids == expected_fwd_ids
+            assert rev_ids == expected_rev_ids
     finally:
         rmtree(out_dir)
 
 
 # --------------------------------------------------
-def test_good_input2():
-    """fasta to fasta"""
+def test_reads1():
+    """ Test reads1 """
 
-    out_dir = random_filename()
-    if os.path.isdir(out_dir):
-        rmtree(out_dir)
+    run([
+        Test(input_file='./inputs/reads1.fa',
+             fwd_file='./expected/reads1_1.fa',
+             rev_file='./expected/reads1_2.fa')
+    ], '')
 
-    try:
-        out_flag = '-o' if random.choice([True, False]) else '--outdir'
-        rv, out = getstatusoutput('{} {} {} {}'.format(prg, out_flag, out_dir,
-                                                       large_fa))
-        assert rv == 0
-        assert os.path.isdir(out_dir)
 
-        assert len(list(SeqIO.parse(large_fa, 'fasta'))) == 500
+# --------------------------------------------------
+def test_reads2():
+    """ Test reads2 """
 
-        forward = os.path.join(out_dir, 'reads2_1.fasta')
-        reverse = os.path.join(out_dir, 'reads2_2.fasta')
-        print(forward)
-        print(reverse)
+    run([
+        Test(input_file='./inputs/reads2.fasta',
+             fwd_file='./expected/reads2_1.fasta',
+             rev_file='./expected/reads2_2.fasta')
+    ], random_string())
 
-        assert os.path.isfile(forward)
-        assert os.path.isfile(reverse)
 
-        assert len(list(SeqIO.parse(forward, 'fasta'))) == 250
-        assert len(list(SeqIO.parse(reverse, 'fasta'))) == 250
+# --------------------------------------------------
+def test_multiple_input():
+    """ Test reads2 """
 
-    finally:
-        rmtree(out_dir)
+    run([
+        Test(input_file='./inputs/reads1.fa',
+             fwd_file='./expected/reads1_1.fa',
+             rev_file='./expected/reads1_2.fa'),
+        Test(input_file='./inputs/reads2.fasta',
+             fwd_file='./expected/reads2_1.fasta',
+             rev_file='./expected/reads2_2.fasta')
+    ], random_string())
