@@ -26,7 +26,7 @@ CGCTAGCTACGACTCGACGACAGCGAACACGCGATCGATCGGAAATGAGAGAGTAGCAA
 
 You will use [Biopython](https://biopython.org/) to parse the FASTA files into records containing fields like `rec.id` and `rec.seq`.
 Be sure to run `python3 -m pip install biopython`, then you can type the following code into a REPL to view the contents of the preceding file.
-Note that the `rec.seq` is itself a `Bio.Seq` objects, so I call `str(rec.seq)` to coerce this to a `str`:
+Note that the `rec.seq` is itself a `Bio.Seq` object, so I call `str(rec.seq)` to coerce this to a `str`:
 
 ```
 >>> from Bio import SeqIO
@@ -70,7 +70,7 @@ optional arguments:
   -o DIR, --outdir DIR  Output directory (default: split)
 ```
 
-If one of the positional arguments is not a valid file, the program should print a usage and an appropriate error message:
+If a positional argument is not a valid file, the program should print a usage and an appropriate error message:
 
 ```
 $ ./au_pair.py blargh
@@ -80,8 +80,8 @@ au_pair.py: error: argument FILE: can't open 'blargh':
 ```
 
 If the `--outdir` does not exist, create it.
-When run with valid input files, the program should write the odd-numbered (1st, 3rd, 5th, ...) sequences of each file into `<outdir>/<basename>_1.<extension>` and the even-numbered into the `_2` file.
-While processing, the program should print the number and basename of each input file, which you can get using `os.path.basename`:
+When run with valid input files, the program should write the odd-numbered (1st, 3rd, 5th, ...) sequences of each file into `<outdir>/<rootname>_1.<extension>` and the even-numbered into the `_2` file.
+The program should finish with a message of where the output was written:
 
 ```
 $ ./au_pair.py inputs/reads1.fa
@@ -95,7 +95,7 @@ $ ls split/
 reads1_1.fa  reads1_2.fa
 ```
 
-Since there were a total of 4 input sequences (each taking 2 lines), each output file should contain 4 lines:
+Since there were a total of 4 input sequences (each taking 2 lines) in this input file, each output file should contain 4 lines:
 
 ```
 $ wc -l split/*
@@ -203,7 +203,9 @@ au_pair.py::FLAKE8 SKIPPED                                               [100%]
 
 =============================== warnings summary ===============================
 test.py:15
-  /home/u20/kyclark/work/be434-fall-2021/assignments/09_fasta/test.py:15: PytestCollectionWarning: cannot collect test class 'Test' because it has a __new__ constructor (from: test.py)
+  /home/u20/kyclark/work/be434-fall-2021/assignments/09_fasta/test.py:15: 
+  PytestCollectionWarning: cannot collect test class 'Test' because it has 
+  a __new__ constructor (from: test.py)
       class Test(NamedTuple):
 
 -- Docs: https://docs.pytest.org/en/stable/warnings.html
