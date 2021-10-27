@@ -6,6 +6,8 @@ Purpose: Rock the Casbah
 """
 
 import argparse
+import io
+from collections import defaultdict  # creat the key with a default value
 
 
 # --------------------------------------------------
@@ -25,11 +27,6 @@ def get_args():
                         metavar='FILE2',
                         type=argparse.FileType('rt'),
                         help='Input file 2')
-
-    # parser.add_argument('file3',
-    #                     metavar='FILE2',
-    #                     type=argparse.FileType('wt'),
-    #                     help='Input file 2')
 
     parser.add_argument('-k',
                         '--kmer',
@@ -52,25 +49,50 @@ def main():
 
     args = get_args()
 
-    kmers1 = {}
-    for line in args.file1:
-        for word in line.split():
-            for kmer in find_kmers(word, args.kmer):
-                if kmer not in kmers1:
-                    kmers1[kmer] = 0
-                kmers1[kmer] += 1
+    # kmers1 = {}
+    # for line in args.file1:
+    #     for word in line.split():
+    #         for kmer in find_kmers(word, args.kmer):
+    #             if kmer not in kmers1:
+    #                 kmers1[kmer] = 0
+    #             kmers1[kmer] += 1
 
-    kmers2 = {}
-    for line in args.file2:
-        for word in line.split():
-            for kmer in find_kmers(word, args.kmer):
-                if kmer not in kmers2:
-                    kmers2[kmer] = 0
-                kmers2[kmer] += 1
+    # kmers2 = {}
+    # for line in args.file2:
+    #     for word in line.split():
+    #         for kmer in find_kmers(word, args.kmer):
+    #             if kmer not in kmers2:
+    #                 kmers2[kmer] = 0
+    #             kmers2[kmer] += 1
+
+    kmers1 = count_kmers(args.file1, args.kmer)
+    kmers2 = count_kmers(args.file2, args.kmer)
 
     common = set(kmers1).intersection(set(kmers2))
     for kmer in common:
         print(f'{kmer:<10} {kmers1[kmer]:>5} {kmers2[kmer]:>5}')
+
+
+# --------------------------------------------------
+def count_kmers(fh, k):
+    """ count kmers """
+
+    # kmers = {}
+    # for line in fh:
+    #     for word in line.split():
+    #         for kmer in find_kmers(word, k):
+    #             if kmer not in kmers:
+    #                 kmers[kmer] = 0
+    #             kmers[kmer] += 1
+
+    kmers = defaultdict(int)
+    for line in fh:
+        for word in line.split():
+            for kmer in find_kmers(word, k):
+                kmers[kmer] += 1
+                # don't need to check for the exsistence of the key
+
+    return kmers
 
 
 # --------------------------------------------------
@@ -79,6 +101,15 @@ def find_kmers(seq, k):
 
     n = len(seq) - k + 1
     return [] if n < 1 else [seq[i:i + k] for i in range(n)]
+
+
+# --------------------------------------------------
+def test_count_kmers():
+    """ Test count_kmers """
+
+    dat = 'foo\nbar\nbaz\n'
+
+    assert count_kmers(io.StringIO(dat), 3) == {'foo': 1, 'bar': 1, 'baz': 1}
 
 
 # --------------------------------------------------
