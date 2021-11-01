@@ -75,6 +75,7 @@ def read_csv(fh):
     exercises = []
     for row in csv.DictReader(fh, delimiter=','):
         low, high = map(int, row['reps'].split('-'))
+        # high, low = [int(val) for val in row.get('reps').split('-')]
         exercises.append((row['exercise'], low, high))
 
     return exercises
