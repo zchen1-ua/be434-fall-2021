@@ -51,33 +51,35 @@ def main():
 
         reader = SeqIO.parse(fh.name, 'fasta')
 
-        i = 1
-        for rec in reader:
-            if i % 2 != 0:
-                outfile = os.path.join(args.outdir, root + '_1' + ext)
-            else:
-                outfile = os.path.join(args.outdir, root + '_2' + ext)
-
-            out_fh = open(outfile, 'at')
-            SeqIO.write(rec, out_fh, 'fasta')
-            i += 1
-
         # i = 1
         # for rec in reader:
         #     if i % 2 != 0:
-        #         seq_odd.append(rec)
+        #         outfile = os.path.join(args.outdir, root + '_1' + ext)
         #     else:
-        #         seq_even.append(rec)
+        #         outfile = os.path.join(args.outdir, root + '_2' + ext)
+
+        #     out_fh = open(outfile, 'at')
+        #     SeqIO.write(rec, out_fh, 'fasta')
         #     i += 1
 
-        # outfile_odd = os.path.join(args.outdir, root + '_1' + ext)
-        # outfile_even = os.path.join(args.outdir, root + '_2' + ext)
+        seq_odd = []
+        seq_even = []
+        i = 1
+        for rec in reader:
+            if i % 2 != 0:
+                seq_odd.append(rec)
+            else:
+                seq_even.append(rec)
+            i += 1
 
-        # out_fh_odd = open(outfile_odd, 'wt')
-        # out_fh_even = open(outfile_even, 'wt')
+        outfile_odd = os.path.join(args.outdir, root + '_1' + ext)
+        outfile_even = os.path.join(args.outdir, root + '_2' + ext)
 
-        # SeqIO.write(seq_odd, out_fh_odd, 'fasta')
-        # SeqIO.write(seq_even, out_fh_even, 'fasta')
+        out_fh_odd = open(outfile_odd, 'wt')
+        out_fh_even = open(outfile_even, 'wt')
+
+        SeqIO.write(seq_odd, out_fh_odd, 'fasta')
+        SeqIO.write(seq_even, out_fh_even, 'fasta')
 
 
 # --------------------------------------------------
