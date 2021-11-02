@@ -81,6 +81,8 @@ def main():
         SeqIO.write(seq_odd, out_fh_odd, 'fasta')
         SeqIO.write(seq_even, out_fh_even, 'fasta')
 
+    print(f'Done, see output in "{args.outdir}"')
+
 
 # --------------------------------------------------
 if __name__ == '__main__':
