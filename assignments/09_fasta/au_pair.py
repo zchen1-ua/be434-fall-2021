@@ -18,7 +18,7 @@ def get_args():
         description='Rock the Casbah',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('file',
+    parser.add_argument('files',
                         metavar='FILE',
                         type=argparse.FileType('rt'),
                         nargs='+',
@@ -38,21 +38,22 @@ def get_args():
 
     return args
 
+
 # --------------------------------------------------
 def main():
     """Make a jazz noise here"""
 
     args = get_args()
 
-    for fh in args.file:
+    for fh in args.files:
 
         basename = os.path.basename(fh.name)
         root, ext = os.path.splitext(basename)
 
-        reader = SeqIO.parse(fh.name, 'fasta')
+        parser = SeqIO.parse(fh, 'fasta')
 
         # i = 1
-        # for rec in reader:
+        # for rec in parser:
         #     if i % 2 != 0:
         #         outfile = os.path.join(args.outdir, root + '_1' + ext)
         #     else:
@@ -65,7 +66,7 @@ def main():
         seq_odd = []
         seq_even = []
         i = 1
-        for rec in reader:
+        for rec in parser:
             if i % 2 != 0:
                 seq_odd.append(rec)
             else:
@@ -75,11 +76,10 @@ def main():
         outfile_odd = os.path.join(args.outdir, root + '_1' + ext)
         outfile_even = os.path.join(args.outdir, root + '_2' + ext)
 
-        out_fh_odd = open(outfile_odd, 'wt')
-        out_fh_even = open(outfile_even, 'wt')
-
-        SeqIO.write(seq_odd, out_fh_odd, 'fasta')
-        SeqIO.write(seq_even, out_fh_even, 'fasta')
+        with open(outfile_odd, 'wt', encoding='utf-8') as out_fh_odd:
+            SeqIO.write(seq_odd, out_fh_odd, 'fasta')
+        with open(outfile_even, 'wt', encoding='utf-8') as out_fh_even:
+            SeqIO.write(seq_even, out_fh_even, 'fasta')
 
     print(f'Done, see output in "{args.outdir}"')
 
