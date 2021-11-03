@@ -45,6 +45,17 @@ def main():
 
     args = get_args()
 
+    # out_dir = args.outdir
+
+    # for fh in args.files:
+    #     root, ext = os.path.splitext(os.path.basename(fh.name))
+    #     forward = open(os.path.join(out_dir, root + '_1' + ext), "wt")
+    #     reverse = open(os.path.join(out_dir, root + '_2' + ext), "wt")
+    #     parser = SeqIO.parse(fh, 'fasta')
+    #     for i, rec in enumerate(parser):
+    #         SeqIO.write(rec, forward if i % 2 == 0 else reverse, 'fasta')
+    # print(f'Done, see output in "{out_dir}"')
+
     for fh in args.files:
 
         basename = os.path.basename(fh.name)
