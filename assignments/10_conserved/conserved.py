@@ -46,6 +46,22 @@ def main():
         out_str = out_str + ("|" if len(set(common)) == 1 else "X")
     print(out_str)
 
+    # seqs = args.file.read().splitlines()
+
+    # conserved = ''
+    # for i in range(len(seqs[0])):
+    #     bases = []
+    #     for seq in seqs:
+    #         bases += seq[i]
+
+    #     # if all([bases[0] == base for base in bases]):
+    #     if len(set(bases)) == 1:
+    #         conserved += '|'
+    #     else:
+    #         conserved += 'X'
+
+    #     # conserved += '|' if len(set(bases)) == 1 else 'X'
+
 
 # --------------------------------------------------
 if __name__ == '__main__':
