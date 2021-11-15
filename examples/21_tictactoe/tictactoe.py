@@ -66,7 +66,9 @@ def main():
     if args.player and args.cell:
         board[args.cell - 1] = args.player
         
-    print(format_board(args.board))
+    print(format_board(board))
+    winner = find_winner(board)
+    print(f'{winner} has won!' if winner else 'No winner.')
 
 
 # --------------------------------------------------
@@ -82,6 +84,20 @@ def format_board(board):
         cells_tmpl.format(cells[3], cells[4], cells[5]), dashes,
         cells_tmpl.format(cells[6], cells[7], cells[8]), dashes
     ])
+
+
+# --------------------------------------------------
+def find_winner(board):
+    """Return the winner"""
+
+    winning = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7],
+               [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
+    for player in ['X', 'O']:
+        for i, j, k in winning:
+            combo = [board[i], board[j], board[k]]
+            if combo == [player, player, player]:
+                return player
 
 
 # --------------------------------------------------
