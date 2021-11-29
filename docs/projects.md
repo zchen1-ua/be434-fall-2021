@@ -14,14 +14,14 @@
 | Kane, Megan | http://github.com/arjibsamlee |
 | Liu, Wen-Wei | http://github.com/sammael-liu/be534_project |
 | Loeffler, Reid Sy | http://github.com/reidloeffler/BE434-Project |
-| Luo, Wenting | http://github.com/wentingluo1993 |
-| Marand, Mariam | http://github.com/mariamhmar |
+| Luo, Wenting | http://github.com/wentingluo1993/My_project |
+| Marand, Mariam | http://github.com/mariamhmar/Mad-Libs-Game  |
 | Melichar, Madeline Grace | http://github.com/mgmelichar/be534_final |
 | Momtaz, Samina | http://github.com/saminamomtaz/FinalProject-BE534 |
-| Nickerson, Megan Noel | http://github.com/megan-nickerson |
+| Nickerson, Megan Noel | http://github.com/megan-nickerson/BE434_Final |
 | Onyango, Alvin Mark | http://github.com/AlvinCap/FP_434 |
 | Payne, Natalie Rose | http://github.com/natalierpayne/join_replicate_fqs |
-| Rodriguez, Anesha Rose | http://github.com/anesharodriguez |
+| Rodriguez, Anesha Rose | http://github.com/anesharodriguez/Mutation |
 | Schlottman, Bradley Aaron | http://github.com/bschlottman/memory_game |
 | Scott, Brian T | http://github.com/brianUA/final_project_be434 |
 | Touceda Suarez, Maria | http://github.com/merytouceda/new_job_hpc |
